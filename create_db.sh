@@ -2,6 +2,8 @@
 pg_user="wordle_user"
 pg_db="wordle_db"
 pg_pass="wordle_password"
+loop_limit=20
+counter=0
 
 #Checking the volumes 
 docker volume ls
@@ -21,6 +23,14 @@ while true; do
     # The server is ready, so exit the loop
     break
   fi
+  # Increment the counter variable
+  counter=$((counter + 1))
+
+  if [[ $counter -ge $loop_limit ]]; then
+    echo "Error: loop limit reached without the database starting"
+    exit 1
+  fi
+
   # Print a message and sleep for 3 seconds before checking again
   echo "Waiting for the database to start..."
   sleep 3
