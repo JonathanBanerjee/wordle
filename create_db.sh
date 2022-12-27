@@ -26,7 +26,7 @@ while true; do
   # Increment the counter variable
   counter=$((counter + 1))
 
-  if [[ $counter -ge $loop_limit ]]; then
+  if [[ ${counter} -ge ${loop_limit} ]]; then
     echo "Error: loop limit reached without the database starting"
     exit 1
   fi
