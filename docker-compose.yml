@@ -18,7 +18,7 @@ services:
 
   app:
     build:
-      context: ~/Desktop/jump/projects/wordle/frontend
+      context: frontend
       dockerfile: Dockerfile
     environment:
       WORDLE__DB_HOST: db
@@ -31,7 +31,7 @@ services:
 
   server:
     build:
-      context: ~/Desktop/jump/projects/wordle/server
+      context: server
       dockerfile: Dockerfile
     ports:
       - "3000:3000"
