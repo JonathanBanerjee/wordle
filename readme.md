@@ -30,6 +30,8 @@ Ensure the docker is running.
 ``` 
 $ docker-compose up 
 ```
+
+Note: This is assuming docker-compose is run from the root folder.
 ---
 ## To run without using containers: 
 Clone the repository:
