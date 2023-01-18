@@ -21,10 +21,8 @@ services:
       context: frontend
       dockerfile: Dockerfile
     environment:
-      WORDLE__DB_HOST: db
-      WORDLE__DB_NAME: wordle_db
-      WORDLE__DB_USER: wordle_user
-      WORDLE__DB_PASSWORD: wordle_password
+      DATABASE_URL: "postgresql://wordle_user:wordle_password@db:5432/mydb?schema=public"
+
     depends_on:
       db:
         condition: service_healthy
