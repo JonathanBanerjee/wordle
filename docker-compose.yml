@@ -19,27 +19,30 @@ services:
     ports:
       - 5432:5432
 
-  app:
-    build:
-      context: server
-      dockerfile: Dockerfile
-    environment:
-      DATABASE_URL: "postgresql://wordle_user:wordle_password@db:5432/mydb?schema=public"
+  # app:
+  #   build:
+  #     context: server
+  #     dockerfile: Dockerfile
+  #   environment:
+  #     DATABASE_URL: "postgresql://wordle_user:wordle_password@db:5432/mydb?schema=public"
 
-    depends_on:
-      db:
-        condition: service_healthy
+  #   depends_on:
+  #     db:
+  #       condition: service_healthy
 
   server:
     build:
       context: server
       dockerfile: Dockerfile
+    environment:
+      DATABASE_URL: "postgresql://wordle_user:wordle_password@db:5432/mydb?schema=public"
     ports:
       - "3000:3000"
-    depends_on:
-      - app
+    # depends_on:
+    #   - app
 
 volumes: 
   dbdata:
+
 
 
