@@ -19,14 +19,14 @@ services:
     ports:
       - 5432:5432
 
-  # app:
-  #   build:
-  #     context: src
-  #     dockerfile: Dockerfile
-  #   depends_on:
-  #     - server
-  #   # ports:
-  #   #  - ""  
+  app:
+    build:
+      context: frontend
+      dockerfile: Dockerfile
+    depends_on:
+      - server
+    ports:
+     - "3000:3000"  
 
   server:
     build:
@@ -35,7 +35,7 @@ services:
     environment:
       DATABASE_URL: "postgresql://${WORDLE_USER}:${WORDLE_PASSWORD}@db:5432/${WORDLE_DB}?schema=public"
     ports:
-      - "3000:3000"
+      - "3002:3002"
     depends_on:
       - db
 
