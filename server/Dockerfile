@@ -13,9 +13,10 @@ RUN npm install
 # Bundle app source
 COPY . . 
 
+RUN npx prisma generate 
 RUN npx prisma db
 
 # Just documentation!
 EXPOSE 3002
 
-CMD [ "node", "server.js" ] 
+CMD [ "node", "server.js"] 

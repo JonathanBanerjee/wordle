@@ -5,8 +5,7 @@ CREATE TABLE Word (
   PRIMARY KEY (id),
   UNIQUE (word)
 );
-
--- Adding words into the table
+ 
 INSERT INTO Word
     (id, word) 
 VALUES 

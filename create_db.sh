@@ -5,7 +5,7 @@ POSTGRES_DB="wordle_db"
 POSTGRES_PASSWORD="wordle_password"
 
 # This avoids clashes with existing Postgres servers
-POSTGRES_PORT=5433
+POSTGRES_PORT=5432
 
 LOOP_LIMIT=20
 
