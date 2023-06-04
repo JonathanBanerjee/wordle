@@ -29,7 +29,7 @@ app.use(function (req, res, next) {
 app.get('/solutions', async (_req, res) => {
   let solutions = undefined
   try {
-    solutions = await prisma.solutions.findMany();
+    solutions = await prisma.word.findMany();
   } catch (error) {
     console.log(error)
   }
